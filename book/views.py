@@ -3,7 +3,7 @@ from rest_framework.generics import ListAPIView, RetrieveUpdateDestroyAPIView, C
 
 from .filters import CategoryFilter
 from .models import Book
-from .serializers import BookModelSerializer
+from .serializers import BookModelSerializer, BookResponseSerializer
 
 
 class BooksView(ListAPIView):
@@ -19,9 +19,13 @@ class BooksView(ListAPIView):
 
 class BookDetailView(RetrieveUpdateDestroyAPIView):
     queryset = Book.objects.all()
-    serializer_class = BookModelSerializer
+    serializer_class = BookResponseSerializer
 
 
 class BookAddView(CreateAPIView):
     serializer_class = BookModelSerializer
+    queryset = Book.objects.all()
+
+
+class BookGetView(CreateAPIView):
     queryset = Book.objects.all()
