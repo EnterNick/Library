@@ -5,8 +5,9 @@ from book.models import Category, Book
 
 class CategoryFilter(FilterSet):
     category = ChoiceFilter(
-        initial='1',
-        choices=Category.objects.values_list('id', 'title'),
+        initial=None,
+        choices=Category.objects.values_list('title', 'title'),
+        lookup_expr='title',
     )
 
     class Meta:
