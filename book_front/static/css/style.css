@@ -130,4 +130,22 @@ button {
 .main .main__card-category:hover {
   background-color: #0400ff;
   color: #ffffff;
+}
+.main .main__card-delete {
+  margin-top: 10px;
+  display: inline-block;
+  font-size: 14px;
+  font-family: "Arial", sans-serif;
+  color: #0400ff;
+  text-decoration: none;
+  padding: 5px 10px;
+  background-color: #f0f0f0;
+  border: 1px solid #000;
+  border-radius: 4px;
+  transition: background-color 0.2s, color 0.2s;
+  cursor: pointer;
+}
+.main .main__card-delete:hover {
+  background-color: #0400ff;
+  color: #ffffff;
 }/*# sourceMappingURL=style.css.map */

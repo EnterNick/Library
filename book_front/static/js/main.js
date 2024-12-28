@@ -21,16 +21,3 @@ fetch(catalogApi+window.location.search)
     console.error('Ошибка:', error);
   });
 
-fetch(catalogApi+item.id)
-.then((response) => response.json())
-  .then((data) => {
-      let card = document.createElement('a');
-      card.classList.add('main__card');
-      card.innerHTML = `
-        <h2 class="main__card-title">${item.title}</h2>
-        <p class="main__card-desc">${item.desc}</p>
-        <p class="main__card-date">${item.date_created}</p>
-        <a href="?category=${item.category}" class="main__card-category">${item.category}</a>
-      `
-      wrapper.appendChild(card);
-});

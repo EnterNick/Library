@@ -20,7 +20,7 @@ class BookDetailView(DetailView):
         if request.POST.get('method', 'post') == 'DELETE':
             self.get_object(queryset=Book.objects.all()).delete()
         if request.POST.get('method', 'post') == 'PUT':
-            serializer = BookModelSerializer(instance=self.get_object(), data=request.POST)
+            serializer = BookModelSerializer(instance=self.get_object(), data=request.POST, context={'request': request})
             if serializer.is_valid():
                 serializer.save()
             return redirect('detail', pk=self.get_object().id)

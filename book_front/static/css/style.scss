@@ -158,5 +158,25 @@ button{
                 color: #ffffff;
             }
         }
+
+        &-delete {
+            margin-top: 10px;
+            display: inline-block;
+            font-size: 14px;
+            font-family: $font-family;
+            color: $link-color;
+            text-decoration: none;
+            padding: 5px 10px;
+            background-color: #f0f0f0;
+            border: 1px solid #000;
+            border-radius: 4px;
+            transition: background-color 0.2s, color 0.2s;
+            cursor: pointer;
+    
+            &:hover {
+                background-color: $link-color;
+                color: #ffffff;
+            }
+        }
     }
 }
