@@ -9,7 +9,6 @@ class BookModelSerializer(serializers.ModelSerializer):
     class Meta:
         model = Book
         exclude = [
-            'id',
             'author',
         ]
         read_only_fields = [
