@@ -21,3 +21,11 @@ class Book(models.Model):
     date_created = models.DateField(default=datetime.date.today)
 
     category = models.ForeignKey(Category, on_delete=models.CASCADE)
+
+
+class BookRequest(models.Model):
+    book = models.ForeignKey(Book, on_delete=models.CASCADE)
+
+    user = models.ForeignKey(get_user_model(), on_delete=models.CASCADE)
+
+    date_created = models.DateField(datetime.date.today)
