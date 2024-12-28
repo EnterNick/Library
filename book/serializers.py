@@ -4,7 +4,7 @@ from book.models import Book, Category
 
 
 class BookModelSerializer(serializers.ModelSerializer):
-    category = serializers.SlugRelatedField(slug_field='title', queryset=Category.objects.all(), many=True)
+    category = serializers.SlugRelatedField(slug_field='title', queryset=Category.objects.all())
 
     class Meta:
         model = Book

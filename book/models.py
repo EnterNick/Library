@@ -20,4 +20,4 @@ class Book(models.Model):
 
     date_created = models.DateField(default=datetime.date.today)
 
-    category = models.ManyToManyField(Category)
+    category = models.ForeignKey(Category, on_delete=models.CASCADE)
