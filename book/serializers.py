@@ -21,8 +21,11 @@ class BookModelSerializer(serializers.ModelSerializer):
 
     def get_fields(self):
         fields = super().get_fields()
-        for i in fields:
-            i.required = False
+        try:
+            for i in fields:
+                fields[i].required = False
+        except Exception:
+            pass
         return fields
 
 
