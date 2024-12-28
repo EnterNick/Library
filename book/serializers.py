@@ -19,6 +19,12 @@ class BookModelSerializer(serializers.ModelSerializer):
         user = self.context['request'].user
         return super().save(**{**kwargs, 'author': user})
 
+    def get_fields(self):
+        fields = super().get_fields()
+        for i in fields:
+            i.required = False
+        return fields
+
 
 class BookResponseSerializer(serializers.ModelSerializer):
     author = serializers.SlugRelatedField(slug_field='username', read_only=True)
