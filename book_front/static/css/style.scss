@@ -1,3 +1,12 @@
+$primary-color: #333;
+$secondary-color: #555;
+$font-family: 'Arial', sans-serif;
+$card-bg-color: #ffffff;
+$card-border-color: #e0e0e0;
+$card-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+$link-color: #0400ff;
+$link-hover-color: #1b00b3;
+
 *{
     margin: 0;
     padding: 0;
@@ -23,48 +32,130 @@ button{
     background: none;
 }
 
-.header{
-    margin-top: 20px;
-    border-bottom: 1px solid rgb(190, 190, 190);
-    &__wrapper{
-        display: flex;
-        align-items: center;
-        justify-content: space-between;
+.header {
+    background-color: #f8f9fa;
+    padding: 10px 0;
+    border-bottom: 1px solid #e0e0e0;
+
+    .container {
+        max-width: 1440px;
+        margin: 0 auto;
+        padding: 0 15px;
     }
-    &__logo{
+
+    &__wrapper {
         display: flex;
+        justify-content: space-between;
         align-items: center;
-        gap: 10px;
-        h1{
-            color: #000;
+    }
+
+    &__logo {
+        color: $primary-color;
+
+        h1 {
+            margin: 0;
+            font-size: 24px;
+            font-family: $font-family;
         }
     }
-    &__nav{
+
+    &__nav {
         display: flex;
-        align-items: center;
-        gap: 20px;
-        li{
-            a{
-                color: #000;
-                &:hover{
-                    border-bottom: 1px solid #000;
+        gap: 40px;
+
+        li {
+            a {
+                color: $secondary-color;
+                font-family: $font-family;
+                font-size: 16px;
+
+                &:hover {
+                    color: $link-hover-color;
+                    border-bottom: 1px solid $primary-color;
                 }
             }
         }
     }
-    &__auth{
-        display: flex;
-        align-items: center;
-        gap: 40px;
-        a{
-            color: #000;
-            background-color: gray;
+
+    &__auth {
+        a {
+            text-decoration: none;
+            color: $link-color;
+            font-family: $font-family;
+            font-size: 16px;
+            margin-left: 15px;
+            background-color: #f0f0f0;
+            border-radius: 4px;
+            padding: 10px 15px;
+            transition: background-color 0.2s, color 0.2s;
+
+            &:hover {
+                background-color: $link-color;
+                color: #ffffff;
+            }
+        }
+    }
+}
+
+.main{
+    margin-top: 40px;
+    &__card-block{
+        display: grid;
+        grid-template-columns: repeat(4, 1fr);
+        gap: 20px;
+    }
+
+    .main__card {
+        display: block;
+        background-color: $card-bg-color;
+        border: 1px solid $card-border-color;
+        border-radius: 8px;
+        box-shadow: $card-shadow;
+        padding: 20px;
+        text-decoration: none;
+        color: $primary-color;
+        transition: transform 0.2s, box-shadow 0.2s;
+    
+        &:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+        }
+    
+        &-title {
+            font-size: 20px;
+            font-family: $font-family;
+            margin: 0 0 10px 0;
+            color: $primary-color;
+        }
+    
+        &-desc {
+            font-size: 16px;
+            font-family: $font-family;
+            color: $secondary-color;
+            margin: 0 0 10px 0;
+        }
+    
+        &-date {
+            font-size: 14px;
+            font-family: $font-family;
+            color: $secondary-color;
+            margin: 0 0 10px 0;
+        }
+    
+        &-category {
+            display: inline-block;
+            font-size: 14px;
+            font-family: $font-family;
+            color: $link-color;
+            text-decoration: none;
             padding: 5px 10px;
-            border-radius: 10px;
-            display: block;
-            transition: all ease-in-out .2s;
-            &:hover{
-                transform: scale(1.05);
+            background-color: #f0f0f0;
+            border-radius: 4px;
+            transition: background-color 0.2s, color 0.2s;
+    
+            &:hover {
+                background-color: $link-color;
+                color: #ffffff;
             }
         }
     }
